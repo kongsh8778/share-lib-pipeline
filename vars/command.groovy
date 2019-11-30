@@ -8,7 +8,7 @@ def getCommand(){
 }
 
 def runCommand(){
-	cdmout = bat label: '', script: 'cmd'
+	cdmout = bat label: '', script: '%cmd%'
 }
 
 def getOutput(){
