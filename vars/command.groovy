@@ -8,6 +8,11 @@ def getCommand(){
 }
 
 def runCommand(){
-	bat label: '', script: '${cmd}'
+	cdmout = bat label: '', script: '${cmd}'
 }
+
+def getOutput(){
+	cdmout
+}
+
 
