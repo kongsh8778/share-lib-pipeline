@@ -1,7 +1,13 @@
 //vars/uSendMail.groovy
-def text = '''<!DOCTYPE html>    <html>    <head>    <meta charset="UTF-8">    <title>${ENV, var="JOB_NAME"}-第${BUILD_NUMBER}次构建日志</title>    </head>    
-    <body leftmargin="8" marginwidth="0" topmargin="8" marginheight="4"    
-    offset="0">    
+def text = '''
+<!DOCTYPE html>    
+<html>    
+	<head>    
+	<meta charset="UTF-8">    
+	<title>${ENV, var="JOB_NAME"}-第${BUILD_NUMBER}次构建日志</title>    
+	</head>  
+	
+    <body leftmargin="8" marginwidth="0" topmargin="8" marginheight="4"    offset="0">    
     <table width="95%" cellpadding="0" cellspacing="0"  style="font-size: 11pt; font-family: Tahoma, Arial, Helvetica, sans-serif">    
         <tr>    
             本邮件由系统自动发出，无需回复！<br/>            
@@ -35,7 +41,8 @@ def text = '''<!DOCTYPE html>    <html>    <head>    <meta charset="UTF-8">    <
         </tr>    
     </table>    
 	</body>    
-	</html> '''
+	
+</html> '''
 	
 def call(String subject,String to){
 	emailext attachLog: true, body: text, compressLog: true, mimeType: 'text/html', subject: %subject%, to: %to%
