@@ -45,6 +45,6 @@ def text = '''
 </html> '''
 	
 def call(String subject,String to){
-	emailext attachLog: true, body: text, compressLog: true, mimeType: 'text/html', subject: %subject%, to: %to%
+	emailext attachLog: true, body: text, compressLog: true, mimeType: 'text/html', subject: subject, to: to
 	
 }
