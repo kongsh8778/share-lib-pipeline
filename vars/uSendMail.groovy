@@ -1,5 +1,6 @@
 //vars/uSendMail.groovy
-def text = '''
+def call(String subject,String to){
+	def text = '''
 <!DOCTYPE html>    
 <html>    
 	<head>    
@@ -43,8 +44,6 @@ def text = '''
 	</body>    
 	
 </html> '''
-	
-def call(String subject,String to){
 	emailext attachLog: true, body: text, compressLog: true, mimeType: 'text/html', subject: subject, to: to
 	
 }
