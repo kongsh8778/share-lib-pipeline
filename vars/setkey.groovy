@@ -38,7 +38,7 @@ def setKeyValueByWriteFile(key, value, file_path) {
     new_lines = []
     lines.each { line ->
         if(line.trim().startsWith(key)) {
-            line = key + "=" + value
+            line = key + "='" + value + "'"
             new_lines.add(line)
         }else {
             new_lines.add(line)
