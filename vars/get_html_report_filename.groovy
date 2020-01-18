@@ -4,7 +4,7 @@ def call(report_store_path) {
     out = bat(script:get_html_file_command,returnStdout: true).trim()
     out = out.tokenize("\n")[1] // get the second line string
     println out
-    html_report_filename = out.split("TestReport")[1].replace("\\", "")
+    html_report_filename = out.split(report_store_path)[1].replace("\\", "")
     println html_report_filename
     return html_report_filename
 }
